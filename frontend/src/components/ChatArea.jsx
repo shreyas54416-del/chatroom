@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, MoreVertical, Smile, Paperclip, Send, Mic } from 'lucide-react';
+import { Search, MoreVertical, Smile, Paperclip, Send, Mic, ArrowLeft } from 'lucide-react';
 import { mockMessages } from '../mockData';
 import { socket } from '../socket'; // Import socket
 import './ChatArea.css';
 
-function ChatArea({ activeChat, currentUser }) {
+function ChatArea({ activeChat, currentUser, onBack }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [fileData, setFileData] = useState(null); // { name, type, content }
@@ -181,6 +181,18 @@ function ChatArea({ activeChat, currentUser }) {
       {/* Header */}
       <div className="chat-header">
         <div className="chat-header-left">
+          <button className="mobile-back-btn" onClick={onBack} style={{
+            background: 'none',
+            border: 'none',
+            color: '#fff',
+            cursor: 'pointer',
+            marginRight: '12px',
+            display: 'none', /* Hidden by default */
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <ArrowLeft size={20} />
+          </button>
           <img src={activeChat.avatar} alt={activeChat.name} className="avatar" />
           <div className="chat-header-info">
             {isSearchOpen ? (

@@ -321,3 +321,10 @@
   background-color: var(--bg-hover);
   color: var(--accent-green);
 }
+
+@media (max-width: 768px) {
+  .mobile-back-btn {
+    display: flex !important; /* Show on mobile */
+  }
+}
+

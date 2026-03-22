@@ -120,7 +120,7 @@ function App() {
   }
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${activeChat ? 'mobile-active-chat' : ''}`}>
       <Sidebar 
         onSelectChat={handleSelectChat} 
         activeChatId={activeChat?.id} 
@@ -129,7 +129,7 @@ function App() {
         onJoinNewRoom={handleJoinNewRoom}
         onLogout={() => setCurrentUser(null)} 
       />
-      <ChatArea activeChat={activeChat} currentUser={currentUser} />
+      <ChatArea activeChat={activeChat} currentUser={currentUser} onBack={() => setActiveChat(null)} />
     </div>
   );
 }

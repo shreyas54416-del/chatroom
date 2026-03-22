@@ -9,6 +9,27 @@
 @media (max-width: 768px) {
   .app-container {
     flex-direction: column;
+    position: relative;
+  }
+
+  /* Target child components directly */
+  .app-container .sidebar {
+    width: 100% !important;
+    display: block;
+  }
+
+  .app-container .chat-area {
+    width: 100% !important;
+    display: none;
+  }
+
+  /* Active Chat Mobile State */
+  .app-container.mobile-active-chat .sidebar {
+    display: none;
+  }
+
+  .app-container.mobile-active-chat .chat-area {
+    display: flex;
   }
 }
 
