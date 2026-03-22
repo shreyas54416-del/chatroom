@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-primary: #0a0b0e;
+  --bg-secondary: #12141a;
+  --bg-hover: rgba(50, 205, 50, 0.08); /* Armor Green Glow */
+  --bg-active: rgba(50, 205, 50, 0.15);
+  --header-bg: #1a1c23;
+  --input-bg: #14161c;
+  --bubble-sent: rgba(50, 205, 50, 0.15); /* Armor Green Bubble */
+  --bubble-received: rgba(255, 255, 255, 0.03);
+  --text-primary: #ffffff;
+  --text-secondary: #9aa0a6;
+  --text-muted: #5f6368;
+  --accent-green: #32cd32; /* GTA Armor Green */
+  --accent-gold: #ffd700; /* GTA Money Gold */
+  --border-color: rgba(255, 255, 255, 0.05);
+  
+  --font-family: 'Inter', system-ui, sans-serif;
+  --font-hud: 'Oswald', sans-serif; /* For headers and caps display */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.wallpapersden.com/image/download/gta-5-art-games_am5ubGWUmZqaraWkpJRnbmhnrWdrbW0.jpg'); /* GTA Background */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-primary);
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-green);
+  border-radius: 2px;
+}
+
+.title-hud {
+  font-family: var(--font-hud);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
