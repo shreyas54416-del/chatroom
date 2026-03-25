@@ -1,7 +1,7 @@
 .app-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--bg-primary);
   overflow: hidden;
 }
@@ -10,17 +10,22 @@
   .app-container {
     flex-direction: column;
     position: relative;
+    height: 100dvh;
   }
 
   /* Target child components directly */
   .app-container .sidebar {
     width: 100% !important;
-    display: block;
+    height: 100% !important;
+    display: flex;
+    flex-direction: column;
   }
 
   .app-container .chat-area {
     width: 100% !important;
+    height: 100% !important;
     display: none;
+    flex-direction: column;
   }
 
   /* Active Chat Mobile State */
@@ -45,12 +50,18 @@
 .login-box {
   background-color: var(--bg-secondary);
   padding: 40px;
-  border-radius: 4px; /* Rigid corners */
+  border-radius: 8px;
   border: 2px solid var(--accent-green); /* Armor Green outline */
   text-align: center;
-  box-shadow: 0 0 20px rgba(50, 205, 50, 0.3);
+  box-shadow: 0 0 32px rgba(50, 205, 50, 0.3);
   max-width: 400px;
   width: 90%;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
 }
 
 .login-logo {
@@ -58,6 +69,13 @@
   height: 50px;
   margin-bottom: 12px;
   filter: drop-shadow(0 0 5px var(--accent-green));
+}
+
+@media (max-width: 480px) {
+  .login-logo {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .login-box h2 {
