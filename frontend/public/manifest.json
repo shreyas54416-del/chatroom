@@ -1,0 +1,17 @@
+{
+  "name": "NXF CHAT ROOM",
+  "short_name": "NXF Chat",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0b0e",
+  "theme_color": "#12141a",
+  "description": "Private encrypted chat rooms.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

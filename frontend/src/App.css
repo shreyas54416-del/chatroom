@@ -4,37 +4,34 @@
   height: 100dvh;
   background-color: var(--bg-primary);
   overflow: hidden;
+  position: relative;
 }
 
 @media (max-width: 768px) {
   .app-container {
-    flex-direction: column;
+    flex-direction: row; /* Keep row to allow horizontal sliding */
     position: relative;
     height: 100dvh;
+    width: 200vw; /* Double width for sliding */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .app-container.mobile-active-chat {
+    transform: translateX(-100vw);
   }
 
   /* Target child components directly */
   .app-container .sidebar {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex;
-    flex-direction: column;
+    width: 100vw !important;
+    height: 100dvh !important;
+    flex-shrink: 0;
   }
 
   .app-container .chat-area {
-    width: 100% !important;
-    height: 100% !important;
-    display: none;
-    flex-direction: column;
-  }
-
-  /* Active Chat Mobile State */
-  .app-container.mobile-active-chat .sidebar {
-    display: none;
-  }
-
-  .app-container.mobile-active-chat .chat-area {
-    display: flex;
+    width: 100vw !important;
+    height: 100dvh !important;
+    display: flex; /* Always flex on mobile, but off-screen */
+    flex-shrink: 0;
   }
 }
 

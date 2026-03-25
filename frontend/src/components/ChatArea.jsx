@@ -161,7 +161,7 @@ function ChatArea({ activeChat, currentUser, onBack }) {
 
   if (!activeChat) {
     return (
-      <div className="chat-area-empty">
+      <div className="chat-area chat-area-empty">
         <div className="empty-content">
           <img 
             src="https://abs.twimg.com/emoji/v2/72x72/1f4ac.png" 
